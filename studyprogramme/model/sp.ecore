@@ -8,11 +8,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StudyCohort">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
+        eType="#//Semester" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
-        eType="#//Course" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="studyCohorts" upperBound="-1"
         eType="#//StudyCohort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
@@ -24,10 +24,10 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
-        eType="#//Course" containment="true"/>
+        eType="#//Course"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CreditKind">
-    <eLiterals name="FIVE"/>
+    <eLiterals name="FIVE" literal="5"/>
     <eLiterals name="SEVENPOINTFIVE" value="1" literal="7.5"/>
     <eLiterals name="TEN" value="2" literal="10"/>
     <eLiterals name="FIFTEEN" value="3" literal="15"/>
@@ -37,5 +37,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="StudyPlan">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programmes" upperBound="-1"
         eType="#//Programme" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offeredCourses" upperBound="-1"
+        eType="#//Course" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
