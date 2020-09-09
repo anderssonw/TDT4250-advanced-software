@@ -143,7 +143,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		//throw new UnsupportedOperationException();
 		
 		String course = this.course;
-		return course.split("-", 2)[1].strip().strip(); //Should only strip first instance, as course names can contain dashes
+		return course.split("-", 2)[1].trim(); //Should only split first instance, as course names can contain dashes
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		// Ensure that you remove @generated or mark it @generated NOT
 		//throw new UnsupportedOperationException();
 		String course = this.course;
-		return course.split("-")[0].strip();
+		return course.split("-")[0].trim();
 		
 	}
 

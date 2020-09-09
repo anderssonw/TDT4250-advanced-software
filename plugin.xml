@@ -11,7 +11,7 @@
       <package
             uri="platform:/plugin/tdt4250.sp/model/sp.ecore"
             class="sp.SpPackage"
-            genModel="studyprogramme/model/sp.genmodel"/>
+            genModel="model/sp.genmodel"/>
    </extension>
 
 </plugin>
