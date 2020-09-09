@@ -17,9 +17,13 @@
           electiveCourses="//@offeredCourses.0 //@offeredCourses.1 //@offeredCourses.4"
           compulsoryCourses="//@offeredCourses.2"/>
       <semesters
-          code="V2021"/>
+          code="V2021"
+          electiveCourses="//@offeredCourses.11 //@offeredCourses.12 //@offeredCourses.13"
+          compulsoryCourses="//@offeredCourses.9 //@offeredCourses.10"/>
       <semesters
-          code="H2021"/>
+          code="H2021"
+          electiveCourses="//@offeredCourses.6 //@offeredCourses.7 //@offeredCourses.8"
+          compulsoryCourses="//@offeredCourses.5"/>
       <semesters
           code="V2022"
           compulsoryCourses="//@offeredCourses.3"/>
@@ -50,9 +54,27 @@
       course="IT3915 - Master in Informatics, Preparatory Project"
       credits="15"/>
   <offeredCourses
-      course="TDT4136 - Introduction to Artificial Intelligence"
+      course="IT3020 - Current Topics in Informatics"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4136 - Introduction to Artificial Intelligence"
+      course="IT3021 - Game+"
+      credits="7.5"/>
+  <offeredCourses
+      course="IT3023 - Learning Technology and Analytics"
+      credits="7.5"/>
+  <offeredCourses
+      course="IT3010 - Empirical research methodologies in IT and digitalization"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4240 - Software Architecture"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4237 - Software Security and Data Privacy"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4242 - Advanced Software Engineering"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4257 - Digital Service Innovation"
       credits="7.5"/>
 </sp:StudyPlan>
