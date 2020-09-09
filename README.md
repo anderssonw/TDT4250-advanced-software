@@ -58,7 +58,10 @@ We implemented two OCL constraints to check that there is at least 4 and at most
 We implemented two manually written constraints that checks that a semester offers at least 30 course credits through electives and mandatory courses. Additionally there may be no more than 30 compulsory course credits. 
 
 ## Opposites
-
+- StudyCohort & Semester
+- Course of Study & StudyCohort
+- Course of Study & Specialization (Class: CourseOfStudy)
+- Studyplan & Course of Study
 
 ## Containments
 - CourseOfStudy is contained by StudyPlan: a course of Study (e.g. MSIT) can only belong to one studyplan
