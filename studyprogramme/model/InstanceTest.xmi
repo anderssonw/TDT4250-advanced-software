@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sp:StudyPlan
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sp="platform:/plugin/tdt4250.sp/model/sp.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250.sp/model/sp.ecore sp.ecore">
+  <programmes
+      name="MSIT"
+      specializations="//@programmes.1 //@programmes.2 //@programmes.3 //@programmes.4"/>
+  <programmes
+      name="Software">
+    <studyCohorts
+        startYear="2020">
+      <semesters
+          code="H2020"
+          electiveCourses="//@offeredCourses.0 //@offeredCourses.1 //@offeredCourses.4"
+          compulsoryCourses="//@offeredCourses.2"/>
+      <semesters
+          code="V2021"/>
+      <semesters
+          code="H2021"/>
+      <semesters
+          code="V2022"
+          compulsoryCourses="//@offeredCourses.3"/>
+    </studyCohorts>
+  </programmes>
+  <programmes
+      name="Databases and Search"/>
+  <programmes
+      name="Artifical Intelligence"/>
+  <programmes
+      name="Interaction Design, Game and Learning Technology"/>
+  <offeredCourses
+      course="TDT4250 - Advanced Software Design"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4259 - Applied Data Science"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4175 - Information Systems"
+      credits="7.5"/>
+  <offeredCourses
+      course="IT3920 - Master Thesis for MSIT"
+      credits="30"/>
+  <offeredCourses
+      course="TDT4136 - Introduction to Artificial Intelligence"
+      credits="7.5"/>
+  <offeredCourses
+      course="IT3915 - Master in Informatics, Preparatory Project"
+      credits="15"/>
+  <offeredCourses
+      course="TDT4136 - Introduction to Artificial Intelligence"
+      credits="7.5"/>
+  <offeredCourses
+      course="TDT4136 - Introduction to Artificial Intelligence"
+      credits="7.5"/>
+</sp:StudyPlan>
