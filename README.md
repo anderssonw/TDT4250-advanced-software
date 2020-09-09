@@ -27,13 +27,6 @@ TDT4250-advanced-software
 ```
 
 # Content
-## Misc.
-Lanugage for instances is Norwegian for now. E.g. seasons will be returned as "Høst" and "Vår".
-
-**Datatypes**
-
-We have created an enum for credits called CreditKind that is used in the Course class to assign a given number of credits for a course.
-
 ## Classes
 ### Course of Study
 In the Studyplan model there is a class called Course of Study. This is defined as "the courses of which an education is formed by". The class is used both for programmes and specializations (continuation). You can think of a program as a sequence of semesters ending in a set of possible continuations, and the continuations are just like the programme itself, they also contain semesters and end in a set of possible continuations.
@@ -73,6 +66,12 @@ We implemented two manually written constraints that checks that a semester offe
 - Semester is contained by StudyCohort: a semester can only belong to one study chohort. That way you can say that a course in a semester is mandatory. If the semester was not contained by a StudyCohort, it would be difficult to say that a course was mandatory since the semester could be the same for several cohorts.
 - Course is contained by StudyPlan: the courses can belong 
 
+## Misc.
+Lanugage for instances is Norwegian for now. E.g. seasons will be returned as "Høst" and "Vår".
+
+**Datatypes**
+
+We have created an enum for credits called CreditKind that is used in the Course class to assign a given number of credits for a course.
 
 ## Assumptions
 - For this assignment we have assumed that you can only choose from a Bachelor, Integrated Masters, and a Masters, and therefore the minimum semesters are 4 (Masters) and the maximum semesters are 10 (Integrated Masters)
