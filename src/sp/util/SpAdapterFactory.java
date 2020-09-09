@@ -76,12 +76,16 @@ public class SpAdapterFactory extends AdapterFactoryImpl {
 				return createStudyCohortAdapter();
 			}
 			@Override
-			public Adapter caseProgramme(Programme object) {
-				return createProgrammeAdapter();
+			public Adapter caseCourseOfStudy(CourseOfStudy object) {
+				return createCourseOfStudyAdapter();
 			}
 			@Override
 			public Adapter caseSemester(Semester object) {
 				return createSemesterAdapter();
+			}
+			@Override
+			public Adapter caseStudyPlan(StudyPlan object) {
+				return createStudyPlanAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -132,16 +136,16 @@ public class SpAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link sp.Programme <em>Programme</em>}'.
+	 * Creates a new adapter for an object of class '{@link sp.CourseOfStudy <em>Course Of Study</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see sp.Programme
+	 * @see sp.CourseOfStudy
 	 * @generated
 	 */
-	public Adapter createProgrammeAdapter() {
+	public Adapter createCourseOfStudyAdapter() {
 		return null;
 	}
 
@@ -156,6 +160,20 @@ public class SpAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSemesterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sp.StudyPlan <em>Study Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sp.StudyPlan
+	 * @generated
+	 */
+	public Adapter createStudyPlanAdapter() {
 		return null;
 	}
 

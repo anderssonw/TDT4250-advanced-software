@@ -5,38 +5,40 @@ package sp.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import sp.Course;
-import sp.Programme;
+import sp.CourseOfStudy;
 import sp.SpPackage;
 import sp.StudyCohort;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Programme</b></em>'.
+ * An implementation of the model object '<em><b>Course Of Study</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link sp.impl.ProgrammeImpl#getName <em>Name</em>}</li>
- *   <li>{@link sp.impl.ProgrammeImpl#getCourses <em>Courses</em>}</li>
- *   <li>{@link sp.impl.ProgrammeImpl#getStudyCohorts <em>Study Cohorts</em>}</li>
- *   <li>{@link sp.impl.ProgrammeImpl#getSpecializations <em>Specializations</em>}</li>
+ *   <li>{@link sp.impl.CourseOfStudyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link sp.impl.CourseOfStudyImpl#getStudyCohorts <em>Study Cohorts</em>}</li>
+ *   <li>{@link sp.impl.CourseOfStudyImpl#getSpecializations <em>Specializations</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Programme {
+public class CourseOfStudyImpl extends MinimalEObjectImpl.Container implements CourseOfStudy {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,17 +60,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Course> courses;
-
-	/**
-	 * The cached value of the '{@link #getStudyCohorts() <em>Study Cohorts</em>}' reference list.
+	 * The cached value of the '{@link #getStudyCohorts() <em>Study Cohorts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStudyCohorts()
@@ -85,14 +77,14 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Programme> specializations;
+	protected EList<CourseOfStudy> specializations;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProgrammeImpl() {
+	protected CourseOfStudyImpl() {
 		super();
 	}
 
@@ -103,7 +95,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SpPackage.Literals.PROGRAMME;
+		return SpPackage.Literals.COURSE_OF_STUDY;
 	}
 
 	/**
@@ -126,20 +118,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpPackage.PROGRAMME__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Course> getCourses() {
-		if (courses == null) {
-			courses = new EObjectResolvingEList<Course>(Course.class, this, SpPackage.PROGRAMME__COURSES);
-		}
-		return courses;
+			eNotify(new ENotificationImpl(this, Notification.SET, SpPackage.COURSE_OF_STUDY__NAME, oldName, name));
 	}
 
 	/**
@@ -150,7 +129,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	@Override
 	public EList<StudyCohort> getStudyCohorts() {
 		if (studyCohorts == null) {
-			studyCohorts = new EObjectResolvingEList<StudyCohort>(StudyCohort.class, this, SpPackage.PROGRAMME__STUDY_COHORTS);
+			studyCohorts = new EObjectContainmentWithInverseEList<StudyCohort>(StudyCohort.class, this, SpPackage.COURSE_OF_STUDY__STUDY_COHORTS, SpPackage.STUDY_COHORT__PROGRAMME);
 		}
 		return studyCohorts;
 	}
@@ -161,11 +140,40 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @generated
 	 */
 	@Override
-	public EList<Programme> getSpecializations() {
+	public EList<CourseOfStudy> getSpecializations() {
 		if (specializations == null) {
-			specializations = new EObjectResolvingEList<Programme>(Programme.class, this, SpPackage.PROGRAMME__SPECIALIZATIONS);
+			specializations = new EObjectResolvingEList<CourseOfStudy>(CourseOfStudy.class, this, SpPackage.COURSE_OF_STUDY__SPECIALIZATIONS);
 		}
 		return specializations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SpPackage.COURSE_OF_STUDY__STUDY_COHORTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStudyCohorts()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SpPackage.COURSE_OF_STUDY__STUDY_COHORTS:
+				return ((InternalEList<?>)getStudyCohorts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -176,13 +184,11 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SpPackage.PROGRAMME__NAME:
+			case SpPackage.COURSE_OF_STUDY__NAME:
 				return getName();
-			case SpPackage.PROGRAMME__COURSES:
-				return getCourses();
-			case SpPackage.PROGRAMME__STUDY_COHORTS:
+			case SpPackage.COURSE_OF_STUDY__STUDY_COHORTS:
 				return getStudyCohorts();
-			case SpPackage.PROGRAMME__SPECIALIZATIONS:
+			case SpPackage.COURSE_OF_STUDY__SPECIALIZATIONS:
 				return getSpecializations();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -197,20 +203,16 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SpPackage.PROGRAMME__NAME:
+			case SpPackage.COURSE_OF_STUDY__NAME:
 				setName((String)newValue);
 				return;
-			case SpPackage.PROGRAMME__COURSES:
-				getCourses().clear();
-				getCourses().addAll((Collection<? extends Course>)newValue);
-				return;
-			case SpPackage.PROGRAMME__STUDY_COHORTS:
+			case SpPackage.COURSE_OF_STUDY__STUDY_COHORTS:
 				getStudyCohorts().clear();
 				getStudyCohorts().addAll((Collection<? extends StudyCohort>)newValue);
 				return;
-			case SpPackage.PROGRAMME__SPECIALIZATIONS:
+			case SpPackage.COURSE_OF_STUDY__SPECIALIZATIONS:
 				getSpecializations().clear();
-				getSpecializations().addAll((Collection<? extends Programme>)newValue);
+				getSpecializations().addAll((Collection<? extends CourseOfStudy>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,16 +226,13 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SpPackage.PROGRAMME__NAME:
+			case SpPackage.COURSE_OF_STUDY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SpPackage.PROGRAMME__COURSES:
-				getCourses().clear();
-				return;
-			case SpPackage.PROGRAMME__STUDY_COHORTS:
+			case SpPackage.COURSE_OF_STUDY__STUDY_COHORTS:
 				getStudyCohorts().clear();
 				return;
-			case SpPackage.PROGRAMME__SPECIALIZATIONS:
+			case SpPackage.COURSE_OF_STUDY__SPECIALIZATIONS:
 				getSpecializations().clear();
 				return;
 		}
@@ -248,13 +247,11 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SpPackage.PROGRAMME__NAME:
+			case SpPackage.COURSE_OF_STUDY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SpPackage.PROGRAMME__COURSES:
-				return courses != null && !courses.isEmpty();
-			case SpPackage.PROGRAMME__STUDY_COHORTS:
+			case SpPackage.COURSE_OF_STUDY__STUDY_COHORTS:
 				return studyCohorts != null && !studyCohorts.isEmpty();
-			case SpPackage.PROGRAMME__SPECIALIZATIONS:
+			case SpPackage.COURSE_OF_STUDY__SPECIALIZATIONS:
 				return specializations != null && !specializations.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -276,4 +273,4 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		return result.toString();
 	}
 
-} //ProgrammeImpl
+} //CourseOfStudyImpl

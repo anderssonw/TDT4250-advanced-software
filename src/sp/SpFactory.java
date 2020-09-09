@@ -40,13 +40,13 @@ public interface SpFactory extends EFactory {
 	StudyCohort createStudyCohort();
 
 	/**
-	 * Returns a new object of class '<em>Programme</em>'.
+	 * Returns a new object of class '<em>Course Of Study</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme</em>'.
+	 * @return a new object of class '<em>Course Of Study</em>'.
 	 * @generated
 	 */
-	Programme createProgramme();
+	CourseOfStudy createCourseOfStudy();
 
 	/**
 	 * Returns a new object of class '<em>Semester</em>'.
@@ -56,6 +56,15 @@ public interface SpFactory extends EFactory {
 	 * @generated
 	 */
 	Semester createSemester();
+
+	/**
+	 * Returns a new object of class '<em>Study Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Study Plan</em>'.
+	 * @generated
+	 */
+	StudyPlan createStudyPlan();
 
 	/**
 	 * Returns the package supported by this factory.

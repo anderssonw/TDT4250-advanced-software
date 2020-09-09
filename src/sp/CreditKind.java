@@ -26,7 +26,7 @@ public enum CreditKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FIVE(0, "FIVE", "FIVE"),
+	FIVE(0, "FIVE", "5"),
 
 	/**
 	 * The '<em><b>SEVENPOINTFIVE</b></em>' literal object.
@@ -83,7 +83,7 @@ public enum CreditKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #FIVE
-	 * @model
+	 * @model literal="5"
 	 * @generated
 	 * @ordered
 	 */

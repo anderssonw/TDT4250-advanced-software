@@ -59,8 +59,9 @@ public class SpFactoryImpl extends EFactoryImpl implements SpFactory {
 		switch (eClass.getClassifierID()) {
 			case SpPackage.COURSE: return createCourse();
 			case SpPackage.STUDY_COHORT: return createStudyCohort();
-			case SpPackage.PROGRAMME: return createProgramme();
+			case SpPackage.COURSE_OF_STUDY: return createCourseOfStudy();
 			case SpPackage.SEMESTER: return createSemester();
+			case SpPackage.STUDY_PLAN: return createStudyPlan();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,9 +125,9 @@ public class SpFactoryImpl extends EFactoryImpl implements SpFactory {
 	 * @generated
 	 */
 	@Override
-	public Programme createProgramme() {
-		ProgrammeImpl programme = new ProgrammeImpl();
-		return programme;
+	public CourseOfStudy createCourseOfStudy() {
+		CourseOfStudyImpl courseOfStudy = new CourseOfStudyImpl();
+		return courseOfStudy;
 	}
 
 	/**
@@ -138,6 +139,17 @@ public class SpFactoryImpl extends EFactoryImpl implements SpFactory {
 	public Semester createSemester() {
 		SemesterImpl semester = new SemesterImpl();
 		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StudyPlan createStudyPlan() {
+		StudyPlanImpl studyPlan = new StudyPlanImpl();
+		return studyPlan;
 	}
 
 	/**

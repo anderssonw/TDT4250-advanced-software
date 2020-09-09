@@ -11,12 +11,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import sp.Course;
-import sp.CreditKind;
-import sp.Programme;
-import sp.Semester;
-import sp.SpPackage;
-import sp.StudyCohort;
+import sp.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,10 +89,12 @@ public class SpValidator extends EObjectValidator {
 				return validateCourse((Course)value, diagnostics, context);
 			case SpPackage.STUDY_COHORT:
 				return validateStudyCohort((StudyCohort)value, diagnostics, context);
-			case SpPackage.PROGRAMME:
-				return validateProgramme((Programme)value, diagnostics, context);
+			case SpPackage.COURSE_OF_STUDY:
+				return validateCourseOfStudy((CourseOfStudy)value, diagnostics, context);
 			case SpPackage.SEMESTER:
 				return validateSemester((Semester)value, diagnostics, context);
+			case SpPackage.STUDY_PLAN:
+				return validateStudyPlan((StudyPlan)value, diagnostics, context);
 			case SpPackage.CREDIT_KIND:
 				return validateCreditKind((CreditKind)value, diagnostics, context);
 			default:
@@ -120,7 +117,76 @@ public class SpValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStudyCohort(StudyCohort studyCohort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(studyCohort, diagnostics, context);
+		if (!validate_NoCircularContainment(studyCohort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStudyCohort_minimumSemesterCount(studyCohort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStudyCohort_maximumSemesterCount(studyCohort, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the minimumSemesterCount constraint of '<em>Study Cohort</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STUDY_COHORT__MINIMUM_SEMESTER_COUNT__EEXPRESSION = "self.semesters->size() >= 4";
+
+	/**
+	 * Validates the minimumSemesterCount constraint of '<em>Study Cohort</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStudyCohort_minimumSemesterCount(StudyCohort studyCohort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(SpPackage.Literals.STUDY_COHORT,
+				 studyCohort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "minimumSemesterCount",
+				 STUDY_COHORT__MINIMUM_SEMESTER_COUNT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the maximumSemesterCount constraint of '<em>Study Cohort</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STUDY_COHORT__MAXIMUM_SEMESTER_COUNT__EEXPRESSION = "self.semesters->size() <= 10";
+
+	/**
+	 * Validates the maximumSemesterCount constraint of '<em>Study Cohort</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStudyCohort_maximumSemesterCount(StudyCohort studyCohort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(SpPackage.Literals.STUDY_COHORT,
+				 studyCohort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "maximumSemesterCount",
+				 STUDY_COHORT__MAXIMUM_SEMESTER_COUNT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -128,8 +194,8 @@ public class SpValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProgramme(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programme, diagnostics, context);
+	public boolean validateCourseOfStudy(CourseOfStudy courseOfStudy, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(courseOfStudy, diagnostics, context);
 	}
 
 	/**
@@ -148,6 +214,7 @@ public class SpValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(semester, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSemester_minimumCourseCredits(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_maximumCompulsoryCourseCredits(semester, diagnostics, context);
 		return result;
 	}
 
@@ -161,7 +228,12 @@ public class SpValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		EList<Course> courses = semester.getCourses();
+		
+		EList<Course> courses = semester.getElectiveCourses(); //Helper while getting all courses
+		EList<Course> compulsoryCourses = semester.getCompulsoryCourses();
+		
+		
+		compulsoryCourses.forEach(course -> courses.add(course));
 		
 		int sum = 0;
 		
@@ -184,6 +256,51 @@ public class SpValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Validates the maximumCompulsoryCourseCredits constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validateSemester_maximumCompulsoryCourseCredits(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		
+		EList<Course> compulsoryCourses = semester.getCompulsoryCourses();
+		
+		int sum = 0;
+		
+		for (Course course : compulsoryCourses) {
+			sum += course.getCredits().getValue();
+		}
+		
+		if (sum > 30) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "maximumCompulsoryCourseCredits", getObjectLabel(semester, context) },
+						 new Object[] { semester },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStudyPlan(StudyPlan studyPlan, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(studyPlan, diagnostics, context);
 	}
 
 	/**

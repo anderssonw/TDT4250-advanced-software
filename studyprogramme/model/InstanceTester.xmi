@@ -11,20 +11,12 @@
   <programmes
       name="SE">
     <studyCohorts
-        startYear="2019">
-      <semesters
-          code="H2020"
-          courses="//@offeredCourses.0"/>
-    </studyCohorts>
+        startYear="2019"/>
   </programmes>
   <programmes
       name="IXD">
     <studyCohorts
-        startYear="2019">
-      <semesters
-          code="H2020"
-          courses="//@offeredCourses.0"/>
-    </studyCohorts>
+        startYear="2019"/>
   </programmes>
   <programmes
       name="MTDT"
@@ -42,4 +34,8 @@
       name="APD"
       code="TDT4250"
       credits="7.5"/>
+  <offeredCourses
+      name="Masteroppgave Informatikk"
+      code="IT3901"
+      credits="30"/>
 </sp:StudyPlan>

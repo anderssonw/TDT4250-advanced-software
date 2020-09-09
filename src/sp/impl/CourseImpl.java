@@ -21,53 +21,34 @@ import sp.SpPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link sp.impl.CourseImpl#getName <em>Name</em>}</li>
- *   <li>{@link sp.impl.CourseImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link sp.impl.CourseImpl#getCourse <em>Course</em>}</li>
  *   <li>{@link sp.impl.CourseImpl#getCredits <em>Credits</em>}</li>
+ *   <li>{@link sp.impl.CourseImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link sp.impl.CourseImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getCourse() <em>Course</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCourse()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String COURSE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getCourse() <em>Course</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCourse()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CODE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String code = CODE_EDEFAULT;
+	protected String course = COURSE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
@@ -88,6 +69,26 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected CreditKind credits = CREDITS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CODE_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +115,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getCourse() {
+		return course;
 	}
 
 	/**
@@ -124,34 +125,39 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setCourse(String newCourse) {
+		String oldCourse = course;
+		course = newCourse;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpPackage.COURSE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpPackage.COURSE__COURSE, oldCourse, course));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 */
+	@Override
+	public String getName() {
+		// Ensure that you remove @generated or mark it @generated NOT
+		//throw new UnsupportedOperationException();
+		
+		String course = this.getCourse();
+		return course.split("-")[1].strip();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	@Override
 	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCode(String newCode) {
-		String oldCode = code;
-		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpPackage.COURSE__CODE, oldCode, code));
+		// Ensure that you remove @generated or mark it @generated NOT
+		//throw new UnsupportedOperationException();
+		String course = this.getCourse();
+		return course.split("-")[0].strip();
+		
 	}
 
 	/**
@@ -185,12 +191,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SpPackage.COURSE__NAME:
-				return getName();
-			case SpPackage.COURSE__CODE:
-				return getCode();
+			case SpPackage.COURSE__COURSE:
+				return getCourse();
 			case SpPackage.COURSE__CREDITS:
 				return getCredits();
+			case SpPackage.COURSE__CODE:
+				return getCode();
+			case SpPackage.COURSE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,11 +211,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SpPackage.COURSE__NAME:
-				setName((String)newValue);
-				return;
-			case SpPackage.COURSE__CODE:
-				setCode((String)newValue);
+			case SpPackage.COURSE__COURSE:
+				setCourse((String)newValue);
 				return;
 			case SpPackage.COURSE__CREDITS:
 				setCredits((CreditKind)newValue);
@@ -224,11 +229,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SpPackage.COURSE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case SpPackage.COURSE__CODE:
-				setCode(CODE_EDEFAULT);
+			case SpPackage.COURSE__COURSE:
+				setCourse(COURSE_EDEFAULT);
 				return;
 			case SpPackage.COURSE__CREDITS:
 				setCredits(CREDITS_EDEFAULT);
@@ -245,12 +247,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SpPackage.COURSE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SpPackage.COURSE__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+			case SpPackage.COURSE__COURSE:
+				return COURSE_EDEFAULT == null ? course != null : !COURSE_EDEFAULT.equals(course);
 			case SpPackage.COURSE__CREDITS:
 				return credits != CREDITS_EDEFAULT;
+			case SpPackage.COURSE__CODE:
+				return CODE_EDEFAULT == null ? getCode() != null : !CODE_EDEFAULT.equals(getCode());
+			case SpPackage.COURSE__NAME:
+				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,10 +269,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", code: ");
-		result.append(code);
+		result.append(" (course: ");
+		result.append(course);
 		result.append(", credits: ");
 		result.append(credits);
 		result.append(')');
