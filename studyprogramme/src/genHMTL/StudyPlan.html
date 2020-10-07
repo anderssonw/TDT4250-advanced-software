@@ -5,9 +5,34 @@
 </head>
 <script>
 	
-	
+function checkSemester(index) {
+	return index % 2 == 0;
+}
 
 </script>
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+
+.table-header {
+	border: 1px solid #F7F7F7;
+  	background-color:#F7F7F7;
+	font-weight: bold;
+}
+
+tr:nth-child(even) {background-color: #F7F7FF}
+</style>
 <body>
     <div>
 	
@@ -33,162 +58,155 @@
     </div>  
     <div id="programmeSoftware"> 
 		<h1>Software</h1>
-			<h2>2020</h2>
-				<div id="semester">
-					<h3>H2020</h3>
-					<div id="manadatoryCourses">
-					<h4>Compulsory Courses</h4>
-					<table>
-						<tr>
-				        	<td>Code</td>
-				   			<td>Name</td>
-				        	<td>Credits</td>
-				        </tr>
+					<h3>Year 1</h3>
+					<h4>Host</h4>
+						<div id="compulsoryCourses">
+						<h4>Compulsory Courses</h4>
+						<table>
+							<tr class="table-header">
+					        	<td>Code</td>
+					   			<td>Name</td>
+					        	<td>Credits</td>
+					        </tr>
+					
 			              <tr>
-			                <td></td>
-							<td></td>
+			                <td>TDT4175</td>
+							<td>Information Systems</td>
 			                <td>7.5</td>
 			              </tr>
 			        </table>
-					<div id="electiveCourses">
+						<div id="electiveCourses">
 						<h4>Elective Courses</h4>
 						<table>
-							<tr>
+							<tr class="table-header">
 					        	<td>Code</td>
 					   			<td>Name</td>
 					        	<td>Credits</td>
 					        </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>TDT4250</td>
+								<td>Advanced Software Design</td>
 				                <td>7.5</td>
 				              </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>TDT4259</td>
+								<td>Applied Data Science</td>
 				                <td>7.5</td>
 				              </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>TDT4136</td>
+								<td>Introduction to Artificial Intelligence</td>
 				                <td>7.5</td>
 				              </tr>
 				        </table>
 			        </div>
       			</div>
-				<div id="semester">
-					<h3>V2021</h3>
-					<div id="manadatoryCourses">
-					<h4>Compulsory Courses</h4>
-					<table>
-						<tr>
-				        	<td>Code</td>
-				   			<td>Name</td>
-				        	<td>Credits</td>
-				        </tr>
+					<h4>Vår</h4>
+						<div id="compulsoryCourses">
+						<h4>Compulsory Courses</h4>
+						<table>
+							<tr class="table-header">
+					        	<td>Code</td>
+					   			<td>Name</td>
+					        	<td>Credits</td>
+					        </tr>
+					
 			              <tr>
-			                <td></td>
-							<td></td>
+			                <td>IT3010</td>
+							<td>Empirical research methodologies in IT and digitalization</td>
 			                <td>7.5</td>
 			              </tr>
 			              <tr>
-			                <td></td>
-							<td></td>
+			                <td>TDT4240</td>
+							<td>Software Architecture</td>
 			                <td>7.5</td>
 			              </tr>
 			        </table>
-					<div id="electiveCourses">
+						<div id="electiveCourses">
 						<h4>Elective Courses</h4>
 						<table>
-							<tr>
+							<tr class="table-header">
 					        	<td>Code</td>
 					   			<td>Name</td>
 					        	<td>Credits</td>
 					        </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>TDT4237</td>
+								<td>Software Security and Data Privacy</td>
 				                <td>7.5</td>
 				              </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>TDT4242</td>
+								<td>Advanced Software Engineering</td>
 				                <td>7.5</td>
 				              </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>TDT4257</td>
+								<td>Digital Service Innovation</td>
 				                <td>7.5</td>
 				              </tr>
 				        </table>
 			        </div>
       			</div>
-				<div id="semester">
-					<h3>H2021</h3>
-					<div id="manadatoryCourses">
-					<h4>Compulsory Courses</h4>
-					<table>
-						<tr>
-				        	<td>Code</td>
-				   			<td>Name</td>
-				        	<td>Credits</td>
-				        </tr>
+					<h3>Year 2</h3>
+					<h4>Host</h4>
+						<div id="compulsoryCourses">
+						<h4>Compulsory Courses</h4>
+						<table>
+							<tr class="table-header">
+					        	<td>Code</td>
+					   			<td>Name</td>
+					        	<td>Credits</td>
+					        </tr>
+					
 			              <tr>
-			                <td></td>
-							<td></td>
+			                <td>IT3915</td>
+							<td>Master in Informatics, Preparatory Project</td>
 			                <td>15</td>
 			              </tr>
 			        </table>
-					<div id="electiveCourses">
+						<div id="electiveCourses">
 						<h4>Elective Courses</h4>
 						<table>
-							<tr>
+							<tr class="table-header">
 					        	<td>Code</td>
 					   			<td>Name</td>
 					        	<td>Credits</td>
 					        </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>IT3020</td>
+								<td>Current Topics in Informatics</td>
 				                <td>7.5</td>
 				              </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>IT3021</td>
+								<td>Game+</td>
 				                <td>7.5</td>
 				              </tr>
 				              <tr>
-				                <td></td>
-								<td></td>
+				                <td>IT3023</td>
+								<td>Learning Technology and Analytics</td>
 				                <td>7.5</td>
 				              </tr>
 				        </table>
 			        </div>
       			</div>
-				<div id="semester">
-					<h3>V2022</h3>
-					<div id="manadatoryCourses">
-					<h4>Compulsory Courses</h4>
-					<table>
-						<tr>
-				        	<td>Code</td>
-				   			<td>Name</td>
-				        	<td>Credits</td>
-				        </tr>
-			              <tr>
-			                <td></td>
-							<td></td>
-			                <td>30</td>
-			              </tr>
-			        </table>
-					<div id="electiveCourses">
-						<h4>Elective Courses</h4>
+					<h4>Vår</h4>
+						<div id="compulsoryCourses">
+						<h4>Compulsory Courses</h4>
 						<table>
-							<tr>
+							<tr class="table-header">
 					        	<td>Code</td>
 					   			<td>Name</td>
 					        	<td>Credits</td>
 					        </tr>
+					
+			              <tr>
+			                <td>IT3920</td>
+							<td>Master Thesis for MSIT</td>
+			                <td>30</td>
+			              </tr>
+			        </table>
 				        </table>
 			        </div>
       			</div>

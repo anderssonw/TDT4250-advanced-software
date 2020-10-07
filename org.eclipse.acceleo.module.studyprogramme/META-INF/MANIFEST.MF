@@ -20,4 +20,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: org.eclipse.acceleo.module.studyprogramme.main
+Import-Package: sp
 

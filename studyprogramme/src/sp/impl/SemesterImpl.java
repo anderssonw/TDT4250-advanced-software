@@ -205,10 +205,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 		String course = this.getCode();
 		
 		String season = course.substring(0, 1);
-		
-		if (season == "H") {
-			return "Høst";
-		} else if (season == "V") {
+		if (season.equals("H")) {
+			return "Host";
+		} else if (season.equals("V")) {
 			return "Vår";
 		} else {
 			throw new IllegalArgumentException();

@@ -12,9 +12,34 @@
 </head>
 <script>
 	
-	
+function checkSemester(index) {
+	return index % 2 == 0;
+}
 
 </script>
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+
+.table-header {
+	border: 1px solid #F7F7F7;
+  	background-color:#F7F7F7;
+	font-weight: bold;
+}
+
+tr:nth-child(even) {background-color: #F7F7FF}
+</style>
 <body>
     <div>
 	
@@ -37,47 +62,56 @@
     <div id="programme[programme.name/]"> 
 		<h1>[programme.name/]</h1>
 		[for (studyCohort : StudyCohort | programme.studyCohorts)]
-			<h2>[studyCohort.startYear/]</h2>
 			[for (semester : Semester | studyCohort.semesters)]
-				<div id="semester">
-					<h3>[semester.code/]</h3>
-					<div id="manadatoryCourses">
-					<h4>Compulsory Courses</h4>
-					<table>
-						<tr>
-				        	<td>Code</td>
-				   			<td>Name</td>
-				        	<td>Credits</td>
-				        </tr>
-						[for (compulsoryCourse : Course | semester.compulsoryCourses)]
-			              <tr>
-			                <td>[compulsoryCourse.code/]</td>
-							<td>[compulsoryCourse.name/]</td>
-			                <td>[compulsoryCourse.credits/]</td>
-			              </tr>
-						[/for]
-			        </table>
-					<div id="electiveCourses">
-						<h4>Elective Courses</h4>
+				[if (semester.season.toString().equalsIgnoreCase('Host'))]
+					<h3>Year [(semester.year - studyCohort.startYear)+1/]</h3>
+				[/if]
+					<h4>[semester.season/]</h4>
+					[for (compulsoryCourse : Course | semester.compulsoryCourses)]
+						[if (i = 1)]
+						<div id="compulsoryCourses">
+						<h4>Compulsory Courses</h4>
 						<table>
-							<tr>
+							<tr class="table-header">
 					        	<td>Code</td>
 					   			<td>Name</td>
 					        	<td>Credits</td>
 					        </tr>
-							[for (electiveCourse : Course | semester.electiveCourses)]
-				              <tr>
-				                <td>[electiveCourse.code/]</td>
-								<td>[electiveCourse.name/]</td>
-				                <td>[electiveCourse.credits/]</td>
-				              </tr>
-							[/for]
-				        </table>
-			        </div>
-      			</div>
+						[/if]
+					[/for]
+					[for (compulsoryCourse : Course | semester.compulsoryCourses)]
+		              <tr>
+		                <td>[compulsoryCourse.code/]</td>
+						<td>[compulsoryCourse.name/]</td>
+		                <td>[compulsoryCourse.credits/]</td>
+		              </tr>
+					[/for]
+			        </table>
+					[for (electiveCourse : Course | semester.electiveCourses)]
+						[if (i = 1)]
+						<div id="electiveCourses">
+						<h4>Elective Courses</h4>
+						<table>
+							<tr class="table-header">
+					        	<td>Code</td>
+					   			<td>Name</td>
+					        	<td>Credits</td>
+					        </tr>
+						[/if]
+					[/for]
+					[for (electiveCourse : Course | semester.electiveCourses)]
+		              <tr>
+		                <td>[electiveCourse.code/]</td>
+						<td>[electiveCourse.name/]</td>
+		                <td>[electiveCourse.credits/]</td>
+		              </tr>
+					[/for]
+				    </table>
+			    </div>
+      		</div>
 			[/for]
 		[/for]
-    </div>  
+    	</div>  
 	[/for]
     </div>
   </body>
