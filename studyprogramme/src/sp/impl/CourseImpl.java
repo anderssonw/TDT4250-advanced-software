@@ -116,7 +116,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 */
 	@Override
 	public String getCourse() {
-		return course;
+		return "The course: " + course;
 	}
 
 	/**
@@ -142,8 +142,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		// Ensure that you remove @generated or mark it @generated NOT
 		//throw new UnsupportedOperationException();
 		
-		String course = this.course;
-		return course.split("-", 2)[1].trim(); //Should only split first instance, as course names can contain dashes
+		String fullCourse = course;
+		return fullCourse.split("-", 2)[1].trim(); //Should only split first instance, as course names can contain dashes
 	}
 
 	/**
@@ -155,9 +155,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	public String getCode() {
 		// Ensure that you remove @generated or mark it @generated NOT
 		//throw new UnsupportedOperationException();
-		String course = this.course;
-		return course.split("-")[0].trim();
-		
+		String fullCourse = course;
+		return fullCourse.split("-")[0].trim();
 	}
 
 	/**

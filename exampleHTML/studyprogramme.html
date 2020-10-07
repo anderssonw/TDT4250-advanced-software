@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="programmes">Choose a programme:</label>
+
+      <select name="programmes" id="programmes">
+        <option value="MSIT">MSIT</option>
+        <option value="MTDT">MTDT</option>
+      </select>
+    </div>
+    <div>
+      <label for="studyCohort">Choose a study cohort:</label>
+
+      <select name="cohorts" id="cohorts">
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+      </select>
+    </div>
+    <div id="programmeContent"> 
+      <div id="firstYear">
+        <h3>1st Year</h3>
+        <hr />
+        <div id="semester">
+          <div id="manadatoryCourses">
+            <h4>Mandatory Courses</h4>
+            <table>
+              <tr>
+                <td>Code</td>
+                <td>Name</td>
+                <td>Credits</td>
+              </tr>
+              <tr>
+                <td>TDT4250</td>
+                <td>Advanced Software Design</td>
+                <td>7.5</td>
+              </tr>
+            </table>
+          </div>
+          <div id="electiveCourses"></div>
+          <h4>Elective Courses</h4>
+          <table>
+            <tr>
+              <td>Code</td>
+              <td>Name</td>
+              <td>Credits</td>
+            </tr>
+            <tr>
+              <td>TDT4136</td>
+              <td>Introduction to Artificial Intelligence</td>
+              <td>7.5</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

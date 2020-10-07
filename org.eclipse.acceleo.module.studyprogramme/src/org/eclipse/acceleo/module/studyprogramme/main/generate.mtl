@@ -1,0 +1,86 @@
+[comment encoding = UTF-8 /]
+[module generate('platform:/plugin/tdt4250.sp/model/sp.ecore', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[template public generateElement(studyPlan : StudyPlan)]
+[comment @main/]
+[file ('StudyPlan.html', false, 'UTF-8')]
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Study Plan</title>
+</head>
+<script>
+	
+	
+
+</script>
+<body>
+    <div>
+	
+      <label for="programmes">Choose a programme:</label>
+
+      <select name="programmes" id="programmes">
+		[for (programme : CourseOfStudy | studyPlan.programmes)]
+        	<option value="[programme.name/]">[programme.name/]</option>
+		[/for]
+      </select>
+	
+    </div>
+    <div>
+    	<label for="studyCohort">Choose a study cohort:</label>
+     	<select name="cohorts" id="cohorts">
+      	  <option value="2020">2020</option>
+      	</select>
+    </div>
+	[for (programme : CourseOfStudy | studyPlan.programmes)]
+    <div id="programme[programme.name/]"> 
+		<h1>[programme.name/]</h1>
+		[for (studyCohort : StudyCohort | programme.studyCohorts)]
+			<h2>[studyCohort.startYear/]</h2>
+			[for (semester : Semester | studyCohort.semesters)]
+				<div id="semester">
+					<h3>[semester.code/]</h3>
+					<div id="manadatoryCourses">
+					<h4>Compulsory Courses</h4>
+					<table>
+						<tr>
+				        	<td>Code</td>
+				   			<td>Name</td>
+				        	<td>Credits</td>
+				        </tr>
+						[for (compulsoryCourse : Course | semester.compulsoryCourses)]
+			              <tr>
+			                <td>[compulsoryCourse.code/]</td>
+							<td>[compulsoryCourse.name/]</td>
+			                <td>[compulsoryCourse.credits/]</td>
+			              </tr>
+						[/for]
+			        </table>
+					<div id="electiveCourses">
+						<h4>Elective Courses</h4>
+						<table>
+							<tr>
+					        	<td>Code</td>
+					   			<td>Name</td>
+					        	<td>Credits</td>
+					        </tr>
+							[for (electiveCourse : Course | semester.electiveCourses)]
+				              <tr>
+				                <td>[electiveCourse.code/]</td>
+								<td>[electiveCourse.name/]</td>
+				                <td>[electiveCourse.credits/]</td>
+				              </tr>
+							[/for]
+				        </table>
+			        </div>
+      			</div>
+			[/for]
+		[/for]
+    </div>  
+	[/for]
+    </div>
+  </body>
+</html
+[/file]
+[/template]
