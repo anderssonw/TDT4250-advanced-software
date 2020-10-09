@@ -5,6 +5,8 @@ William Andersson & Anniken Syvertsen
 ```
 org.eclipse.acceleo.module.studyprogramme | Contains the acceleo project
 │   ...
+└───src/main
+    |   Generate.java
     |   generate.mtl | A MTL file which includes HTML-structure, acceleo-code and styling of the project  
 
 exampleHMTL
