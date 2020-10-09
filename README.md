@@ -5,6 +5,7 @@ William Andersson & Anniken Syvertsen
 ```
 org.eclipse.acceleo.module.studyprogramme | Contains the acceleo project
 │   ...
+    |   generate.mtl | A MTL file which includes HTML-structure, acceleo-code and styling of the project  
 
 exampleHMTL
 │   studyprogramme.html | A simple HMTL file to guide us on how to create the acceleo M2T model.
@@ -32,8 +33,8 @@ studyprogramme
 
 ```
 
-# Content
-## Classes
+# Content - studyprogramme/model
+## Classes (eCore)
 ### Course of Study
 In the Studyplan model there is a class called Course of Study. This is defined as "the courses of which an education is formed by". The class is used both for programmes and specializations (continuation). You can think of a program as a sequence of semesters ending in a set of possible continuations, and the continuations are just like the programme itself, they also contain semesters and end in a set of possible continuations.
 
@@ -84,5 +85,15 @@ We have created an enum for credits called CreditKind that is used in the Course
 
 ## Assumptions
 - For this assignment we have assumed that you can only choose from a Bachelor, Integrated Masters, and a Masters, and therefore the minimum semesters are 4 (Masters) and the maximum semesters are 10 (Integrated Masters)
-- For this assignment we have assumed that the courses are either compulsory or elective, no M2A, M1A, K-courses, etc. 
+- For this assignment we have assumed that the courses are either compulsory or elective, no M2A, M1A, K-courses, etc. To solve this we have said that M2A are electives in this case.
+
+# Acceleo
+## Explanation of special cases  
+
+To make sure that the elective courses heading would not be rendered unless a semester for a given programme actually had elective courses, we made a check. The check contains an if-statement that says "if (i=1)", ensuring that the code following the statement would only be rendered if the for-loop made it to the first index. This means that if there are no courses in the list, we will never get to index 1 and the 'elective courses' section will not be rendered. 
+
+[for (electiveCourse : Course | semester.electiveCourses)]
+						[if (i = 1)]
+
+
 
