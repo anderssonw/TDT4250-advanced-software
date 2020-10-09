@@ -69,13 +69,13 @@ public interface SpPackage extends EPackage {
 	int COURSE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Course</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__COURSE = 0;
+	int COURSE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Credits</b></em>' attribute.
@@ -96,13 +96,13 @@ public interface SpPackage extends EPackage {
 	int COURSE__CODE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__NAME = 3;
+	int COURSE__TITLE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Course</em>' class.
@@ -382,17 +382,6 @@ public interface SpPackage extends EPackage {
 	EClass getCourse();
 
 	/**
-	 * Returns the meta object for the attribute '{@link sp.Course#getCourse <em>Course</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Course</em>'.
-	 * @see sp.Course#getCourse()
-	 * @see #getCourse()
-	 * @generated
-	 */
-	EAttribute getCourse_Course();
-
-	/**
 	 * Returns the meta object for the attribute '{@link sp.Course#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,6 +402,17 @@ public interface SpPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCourse_Code();
+
+	/**
+	 * Returns the meta object for the attribute '{@link sp.Course#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see sp.Course#getTitle()
+	 * @see #getCourse()
+	 * @generated
+	 */
+	EAttribute getCourse_Title();
 
 	/**
 	 * Returns the meta object for the attribute '{@link sp.Course#getCredits <em>Credits</em>}'.
@@ -663,14 +663,6 @@ public interface SpPackage extends EPackage {
 		EClass COURSE = eINSTANCE.getCourse();
 
 		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COURSE__COURSE = eINSTANCE.getCourse_Course();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -685,6 +677,14 @@ public interface SpPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COURSE__CODE = eINSTANCE.getCourse_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE__TITLE = eINSTANCE.getCourse_Title();
 
 		/**
 		 * The meta object literal for the '<em><b>Credits</b></em>' attribute feature.

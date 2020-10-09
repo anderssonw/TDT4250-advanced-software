@@ -158,18 +158,8 @@ public class SpPackageImpl extends EPackageImpl implements SpPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCourse_Course() {
-		return (EAttribute)courseEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getCourse_Name() {
-		return (EAttribute)courseEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)courseEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -180,6 +170,16 @@ public class SpPackageImpl extends EPackageImpl implements SpPackage {
 	@Override
 	public EAttribute getCourse_Code() {
 		return (EAttribute)courseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCourse_Title() {
+		return (EAttribute)courseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -412,10 +412,10 @@ public class SpPackageImpl extends EPackageImpl implements SpPackage {
 
 		// Create classes and their features
 		courseEClass = createEClass(COURSE);
-		createEAttribute(courseEClass, COURSE__COURSE);
+		createEAttribute(courseEClass, COURSE__NAME);
 		createEAttribute(courseEClass, COURSE__CREDITS);
 		createEAttribute(courseEClass, COURSE__CODE);
-		createEAttribute(courseEClass, COURSE__NAME);
+		createEAttribute(courseEClass, COURSE__TITLE);
 
 		studyCohortEClass = createEClass(STUDY_COHORT);
 		createEAttribute(studyCohortEClass, STUDY_COHORT__START_YEAR);
@@ -474,10 +474,10 @@ public class SpPackageImpl extends EPackageImpl implements SpPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCourse_Course(), ecorePackage.getEString(), "course", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Credits(), this.getCreditKind(), "credits", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", null, 0, 1, Course.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Title(), ecorePackage.getEString(), "title", null, 0, 1, Course.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(studyCohortEClass, StudyCohort.class, "StudyCohort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStudyCohort_StartYear(), ecorePackage.getEInt(), "startYear", null, 0, 1, StudyCohort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

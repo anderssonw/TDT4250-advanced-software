@@ -15,10 +15,10 @@
       <genEnumLiterals ecoreEnumLiteral="sp.ecore#//CreditKind/THIRTY"/>
     </genEnums>
     <genClasses ecoreClass="sp.ecore#//Course">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//Course/course"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//Course/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//Course/credits"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//Course/code"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//Course/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//Course/title"/>
     </genClasses>
     <genClasses ecoreClass="sp.ecore#//StudyCohort">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sp.ecore#//StudyCohort/startYear"/>

@@ -41,7 +41,7 @@ th, td {
 tr:nth-child(even) {background-color: #F7F7FF}
 </style>
 <body>
-    <div>
+    <!--<div>
 	
       <label for="programmes">Choose a programme:</label>
 
@@ -57,11 +57,12 @@ tr:nth-child(even) {background-color: #F7F7FF}
      	<select name="cohorts" id="cohorts">
       	  <option value="2020">2020</option>
       	</select>
-    </div>
+    </div>-->
 	[for (programme : CourseOfStudy | studyPlan.programmes)]
     <div id="programme[programme.name/]"> 
 		<h1>[programme.name/]</h1>
 		[for (studyCohort : StudyCohort | programme.studyCohorts)]
+			<h2>Cohort [studyCohort.startYear/]</h2>
 			[for (semester : Semester | studyCohort.semesters)]
 				[if (semester.season.toString().equalsIgnoreCase('Host'))]
 					<h3>Year [(semester.year - studyCohort.startYear)+1/]</h3>
@@ -82,7 +83,7 @@ tr:nth-child(even) {background-color: #F7F7FF}
 					[for (compulsoryCourse : Course | semester.compulsoryCourses)]
 		              <tr>
 		                <td>[compulsoryCourse.code/]</td>
-						<td>[compulsoryCourse.name/]</td>
+						<td>[compulsoryCourse.title/]</td>
 		                <td>[compulsoryCourse.credits/]</td>
 		              </tr>
 					[/for]
@@ -102,7 +103,7 @@ tr:nth-child(even) {background-color: #F7F7FF}
 					[for (electiveCourse : Course | semester.electiveCourses)]
 		              <tr>
 		                <td>[electiveCourse.code/]</td>
-						<td>[electiveCourse.name/]</td>
+						<td>[electiveCourse.title/]</td>
 		                <td>[electiveCourse.credits/]</td>
 		              </tr>
 					[/for]

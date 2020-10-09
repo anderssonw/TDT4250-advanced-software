@@ -14,7 +14,7 @@
         startYear="2020">
       <semesters
           code="H2020"
-          electiveCourses="//@offeredCourses.0 //@offeredCourses.1 //@offeredCourses.4"
+          electiveCourses="//@offeredCourses.0 //@offeredCourses.1 //@offeredCourses.4 //@offeredCourses.30 //@offeredCourses.35 //@offeredCourses.25 //@offeredCourses.14"
           compulsoryCourses="//@offeredCourses.2"/>
       <semesters
           code="V2021"
@@ -30,51 +30,180 @@
     </studyCohorts>
   </programmes>
   <programmes
-      name="Databases and Search"/>
+      name="Databases and Search">
+    <studyCohorts
+        startYear="2020">
+      <semesters
+          code="H2020"
+          electiveCourses="//@offeredCourses.15 //@offeredCourses.11 //@offeredCourses.16 //@offeredCourses.17 //@offeredCourses.4 //@offeredCourses.18"
+          compulsoryCourses="//@offeredCourses.14"/>
+      <semesters
+          code="V2021"
+          electiveCourses="//@offeredCourses.20 //@offeredCourses.21 //@offeredCourses.6 //@offeredCourses.22"
+          compulsoryCourses="//@offeredCourses.9 //@offeredCourses.19"/>
+      <semesters
+          code="H2021"
+          electiveCourses="//@offeredCourses.15"
+          compulsoryCourses="//@offeredCourses.5"/>
+      <semesters
+          code="V2022"
+          compulsoryCourses="//@offeredCourses.3"/>
+    </studyCohorts>
+  </programmes>
   <programmes
-      name="Artifical Intelligence"/>
+      name="Artifical Intelligence">
+    <studyCohorts
+        startYear="2020">
+      <semesters
+          code="H2020"
+          electiveCourses="//@offeredCourses.24 //@offeredCourses.14 //@offeredCourses.26 //@offeredCourses.25 //@offeredCourses.15"
+          compulsoryCourses="//@offeredCourses.4 //@offeredCourses.23"/>
+      <semesters
+          code="V2021"
+          electiveCourses="//@offeredCourses.28 //@offeredCourses.29 //@offeredCourses.6 //@offeredCourses.22 //@offeredCourses.37"
+          compulsoryCourses="//@offeredCourses.27"/>
+      <semesters
+          code="H2021"
+          electiveCourses="//@offeredCourses.24"
+          compulsoryCourses="//@offeredCourses.5"/>
+      <semesters
+          code="V2022"
+          compulsoryCourses="//@offeredCourses.3"/>
+    </studyCohorts>
+  </programmes>
   <programmes
-      name="Interaction Design, Game and Learning Technology"/>
+      name="Interaction Design, Game and Learning Technology">
+    <studyCohorts
+        startYear="2020">
+      <semesters
+          code="H2020"
+          electiveCourses="//@offeredCourses.0 //@offeredCourses.1 //@offeredCourses.4 //@offeredCourses.30 //@offeredCourses.2 //@offeredCourses.14 //@offeredCourses.26 //@offeredCourses.25"
+          compulsoryCourses="//@offeredCourses.35"/>
+      <semesters
+          code="V2021"
+          electiveCourses="//@offeredCourses.11 //@offeredCourses.12 //@offeredCourses.13 //@offeredCourses.31 //@offeredCourses.32 //@offeredCourses.36 //@offeredCourses.10 //@offeredCourses.27 //@offeredCourses.33 //@offeredCourses.34"
+          compulsoryCourses="//@offeredCourses.9"/>
+      <semesters
+          code="H2021"
+          electiveCourses="//@offeredCourses.6 //@offeredCourses.7 //@offeredCourses.8"
+          compulsoryCourses="//@offeredCourses.5"/>
+      <semesters
+          code="V2022"
+          compulsoryCourses="//@offeredCourses.3"/>
+    </studyCohorts>
+  </programmes>
   <offeredCourses
-      course="TDT4250 - Advanced Software Design"
+      name="TDT4250 - Advanced Software Design"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4259 - Applied Data Science"
+      name="TDT4259 - Applied Data Science"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4175 - Information Systems"
+      name="TDT4175 - Information Systems"
       credits="7.5"/>
   <offeredCourses
-      course="IT3920 - Master Thesis for MSIT"
+      name="IT3920 - Master Thesis for MSIT"
       credits="30"/>
   <offeredCourses
-      course="TDT4136 - Introduction to Artificial Intelligence"
+      name="TDT4136 - Introduction to Artificial Intelligence"
       credits="7.5"/>
   <offeredCourses
-      course="IT3915 - Master in Informatics, Preparatory Project"
+      name="IT3915 - Master in Informatics, Preparatory Project"
       credits="15"/>
   <offeredCourses
-      course="IT3020 - Current Topics in Informatics"
+      name="IT3020 - Current Topics in Informatics"
       credits="7.5"/>
   <offeredCourses
-      course="IT3021 - Game+"
+      name="IT3021 - Game+"
       credits="7.5"/>
   <offeredCourses
-      course="IT3023 - Learning Technology and Analytics"
+      name="IT3023 - Learning Technology and Analytics"
       credits="7.5"/>
   <offeredCourses
-      course="IT3010 - Empirical research methodologies in IT and digitalization"
+      name="IT3010 - Empirical research methodologies in IT and digitalization"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4240 - Software Architecture"
+      name="TDT4240 - Software Architecture"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4237 - Software Security and Data Privacy"
+      name="TDT4237 - Software Security and Data Privacy"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4242 - Advanced Software Engineering"
+      name="TDT4242 - Advanced Software Engineering"
       credits="7.5"/>
   <offeredCourses
-      course="TDT4257 - Digital Service Innovation"
+      name="TDT4257 - Digital Service Innovation"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4117 - Information Retrieval"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4225 - Very large, distributed data volumes"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4200 - Parallel Computing"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4287 - Algorithms for Bioinformatics"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT2810 - Web Development"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4300 - Data Warehousing and Data Mining"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4150 - Advanced Database Management Systems"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4305 - Big Data Architecture"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT3030 - Deep Learning"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4137 - Cognitive Architectures"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4173 - Machine Learning"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4165 - Programming Languages"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4195 - Visual Computing Fundamentals"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4171 - Artificial Intelligence Methods"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT3105 - Artifical Intelligence Programming"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT3708 - Bio-Inspired Artifical Intelligence"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4252 - Enterprise Architecture for Enterprise Innovation"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT3022 - Participatory design"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT3024 - Research Methods in Human-Computer Interaction"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4230 - Graphics and Visualization"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4257 - Digital Service Innovation"
+      credits="7.5"/>
+  <offeredCourses
+      name="IT3402 - User Interface Design"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4245 - Cooperation Technology and Social Media"
+      credits="7.5"/>
+  <offeredCourses
+      name="TDT4215 - Recommender Systems"
       credits="7.5"/>
 </sp:StudyPlan>
