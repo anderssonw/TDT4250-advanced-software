@@ -94,7 +94,7 @@ We implemented two manually written constraints that checks that a semester offe
 - Course is contained by StudyPlan: the courses can belong 
 
 ## Misc.
-Lanugage for instances is Norwegian for now. E.g. seasons will be returned as "Høst" and "Vår".
+Lanugage for instances is Norwegian for now. E.g. seasons will be returned as "Host" (acceleo didn't like Ø) and "Vår".
 
 **Datatypes**
 
@@ -109,8 +109,13 @@ We have created an enum for credits called CreditKind that is used in the Course
 
 To make sure that the elective courses heading would not be rendered unless a semester for a given programme actually had elective courses, we made a check. The check contains an if-statement that says "if (i=1)", ensuring that the code following the statement would only be rendered if the for-loop made it to the first index. This means that if there are no courses in the list, we will never get to index 1 and the 'elective courses' section will not be rendered. 
 
+```
+Example: 
 [for (electiveCourse : Course | semester.electiveCourses)]
-						[if (i = 1)]
+ 	[if (i = 1)]
+	[/if]
+[/for]
+```
 
 We had difficulties understanding the Sequence class in acceleo, so this became our solution for checking if a Sequence actually has members.
 
