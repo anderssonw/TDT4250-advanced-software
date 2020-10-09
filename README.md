@@ -33,6 +33,19 @@ studyprogramme
 
 ```
 
+# Installation
+
+The repo contains everything you would need, but should you want to regenerate both the model code and execute the M2T transformation again, you may follow these instructions:
+
+1. Clone the repo to your desired location.
+
+2. Regenerate the model code by opnening sp.genmodel and right clicking the sp package, shown below, and clicking "Generate Model Code"
+![Genmodel](https://i.imgur.com/eFD5YRB.png "Genmodel")
+
+3. You may execute the M2T transformation by running the generate.mtl file as a Java Application. Right click generate.mtl -> Run As -> Launch Acceleo Application, and apply the following settings:
+![Java Application Settings](https://i.imgur.com/mgS5doz.png "Java Application Settings")
+
+
 # Content - studyprogramme/model
 ## Classes (eCore)
 ### Course of Study
@@ -95,5 +108,6 @@ To make sure that the elective courses heading would not be rendered unless a se
 [for (electiveCourse : Course | semester.electiveCourses)]
 						[if (i = 1)]
 
+We had difficulties understanding the Sequence class in acceleo, so this became our solution for checking if a Sequence actually has members.
 
 
