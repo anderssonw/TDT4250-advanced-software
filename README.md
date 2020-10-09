@@ -47,6 +47,8 @@ The repo contains everything you would need, but should you want to regenerate b
 3. You may execute the M2T transformation by running the generate.mtl file as a Java Application. Right click generate.mtl -> Run As -> Launch Acceleo Application, and apply the following settings:
 ![Java Application Settings](https://i.imgur.com/mgS5doz.png "Java Application Settings")
 
+# Changes from assignment 1
+Pretty much no changes were made to the model from assingnment one, except the names of the features in Course and padding the model instance with more data.
 
 # Content - studyprogramme/model
 ## Classes (eCore)
@@ -66,8 +68,8 @@ A course has credits and coursecode and also uses derived features to extract th
 The Studyplan is the top class of the model. 
 
 ## Derived Features
-### Course => course name and course code
-All courses are written in the format: "TDT4250 - Advanced Software Engineering". To get access to both the course code and the course name we have made derived features that extract the course name and the course code.
+### Course.name => course.title and course.code
+All course names are written in the format: "TDT4250 - Advanced Software Engineering". To get access to both the course code and the course title we derived those features from the full course name.
 
 ### Semester code => season and year
 When creating a semester you write "H2020", and we have used derived features to extract what season and what year it is based on the semester code.
